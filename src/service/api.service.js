@@ -38,7 +38,7 @@ export const uploadService = {
       },
       responseType: 'blob',
     };
-    const resource = 'http://localhost:3000/fapi/upload/';
+    const resource = 'https://facensor.herokuapp.com/fapi/upload/';
     return apiService.post(resource, file, params);
   },
   get() {
