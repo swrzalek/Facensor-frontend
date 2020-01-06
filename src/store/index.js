@@ -9,7 +9,8 @@ export default new Vuex.Store({
     isProcessing: false,
     isReceiving: false,
     isDone: false,
-    dialog: false,
+    errorDialog: false,
+    errorMessage: '',
     locked: false,
   },
   mutations: {
@@ -19,6 +20,8 @@ export default new Vuex.Store({
       state.isReceiving = false;
       state.isDone = false;
       state.locked = false;
+      state.errorDialog = false;
+      state.errorMessage = '';
     },
     uploadPhase(state){
       state.isUploading = true;
@@ -35,10 +38,17 @@ export default new Vuex.Store({
     success(state) {
       state.isDone = true;
       state.isReceiving = false;
+    },
+    error(state, respond) {
+      state.errorDialog = true;
+      state.errorMessage = respond;
     }
 
   },
   actions: {
+    error(context, data){
+      context.commit('error', data)
+    },
     sent(context){
       context.commit('uploadPhase')
     },

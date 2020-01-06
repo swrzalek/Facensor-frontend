@@ -8,8 +8,10 @@ import store from "../store"
   });
 
   instance.interceptors.response.use((response) => {
-    store.dispatch('received')
+    store.dispatch('received')  
     return response;
+  }, error => {
+    store.dispatch('error', error)
   });
 
 export const apiService = {
@@ -36,9 +38,13 @@ export const uploadService = {
       },
       responseType: 'blob',
     };
-    const resource = 'https://facensor.herokuapp.com/fapi/upload/';
+    const resource = 'http://localhost:3000/fapi/upload/';
     return apiService.post(resource, file, params);
   },
+  get() {
+    const resource = 'https://facensor.herokuapp.com/'
+    return apiService.get(resource)
+  }
 };
 
 export default apiService;
