@@ -1,5 +1,23 @@
-# facensor
 
+# Facensor  [**DEMO**](https://gallant-chandrasekhar-1c4145.netlify.com/)
+
+Made to show effects of [backend](https://github.com/swrzalek/Facensor-backend). 
+Used:
+ - Vue.js
+ - Vuetify
+ - Vuex
+ - Axios
+ - ES6 used as well ;=) 
+
+# Features:
+
+ - Installable  [PWA](https://developers.google.com/web/progressive-web-apps)
+ - Mobile first design
+ - RWD
+ - User friendly
+
+
+# Build
 ## Project setup
 ```
 npm install
@@ -13,11 +31,6 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Run your tests
-```
-npm run test
 ```
 
 ### Lints and fixes files
