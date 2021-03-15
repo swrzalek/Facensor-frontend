@@ -7,7 +7,6 @@ Used:
  - Vuetify
  - Vuex
  - Axios
- - ES6 used as well ;=) 
 
 # Features:
 
